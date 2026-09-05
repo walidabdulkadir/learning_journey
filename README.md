@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 📚 Learning Journey
 
 A personal documentation of my learning path in software development and AI-powered applications. This repo is organized by courses and topics, each with its own notes, projects, and hands-on work.
@@ -55,8 +54,6 @@ learning_journey/
 | Axios | HTTP requests |
 | Swiper | Carousel/slider components |
 | Lucide React & React Icons | Icon libraries |
-| SweetAlert2 | Styled alerts and modals |
-| Bootstrap 5 | Component library |
 
 ### Backend
 | Technology | Purpose |
@@ -98,6 +95,3 @@ learning_journey/
 
 *Started: 2026 — Ongoing*
 =======
-HHH
->>>>>>> ea3ba4e7bc62866a1c99e67353f1b1ab82296f23
-
