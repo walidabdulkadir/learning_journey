@@ -112,29 +112,7 @@ Create a MySQL database and conversation table. The table definition is availabl
 
 The application uses these database defaults unless environment variables override them:
 
-```text
-Host: localhost
-User: gpt-admin
-Password: 98765
-Database: chatgpt-clone
-```
-
-### 2. Configure backend environment variables
-
-Create a `.env` file inside `Backend/`:
-
-```env
-GEMINI_API_KEY=your_google_gemini_api_key
-GEMINI_MODEL=gemini-3.5-flash-lite
-DB_HOST=localhost
-DB_USER=gpt-admin
-DB_PASSWORD=your_mysql_password
-DB_DATABASE=chatgpt-clone
-```
-
-`GEMINI_MODEL` is optional. If it is omitted, the backend uses `gemini-3.5-flash-lite`.
-
-### 3. Install dependencies
+### 2. Install dependencies
 
 From the project directory, install dependencies for both applications:
 
@@ -146,7 +124,7 @@ cd ../frontend
 npm install
 ```
 
-### 4. Start the applications
+### 3. Start the applications
 
 Start the backend in one terminal:
 
