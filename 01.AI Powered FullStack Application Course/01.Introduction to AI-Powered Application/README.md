@@ -27,6 +27,7 @@ The core takeaway was getting comfortable with the modern React ecosystem and ho
 This topic built the conceptual foundation needed to understand AI without the hype.
 
 **Key ideas:**
+
 - **AI vs ML vs Deep Learning vs Generative AI** — nested fields, each more specialized than the last. Generative AI sits at the deepest level and is what powers tools like ChatGPT.
 - **Brief history** — from Alan Turing's 1950 Imitation Game, to the Dartmouth Conference coining "Artificial Intelligence" in 1956, through AI Winters caused by unmet expectations, to the deep learning boom of the 2010s, and Google's 2017 Transformer paper ("Attention Is All You Need") that shaped modern LLMs.
 - **How LLMs actually work** — they are token predictors. Given a prompt, the model predicts the next most likely token, repeatedly, until a response is formed.
@@ -40,9 +41,10 @@ This topic built the conceptual foundation needed to understand AI without the h
 
 ### 3. The Rise of AI-Powered Applications
 
-This topic answered the question: *what actually makes an application "AI-powered"?*
+This topic answered the question: _what actually makes an application "AI-powered"?_
 
 **Key ideas:**
+
 - AI-powered apps are **traditional software + a model intelligence layer**. The model doesn't replace the backend, database, or UI — it adds capabilities like meaning understanding, generation, and personalization on top.
 - **Semantic search vs. keyword search** — traditional SQL `LIKE` queries match exact words. Semantic search converts text to vectors (embeddings) and finds results by meaning, even when exact words don't match. This is a concrete example of where AI genuinely improves over rule-based logic.
 - **Why AI apps are growing now** — three reasons: Model-as-a-Service APIs (no need to train your own model), powerful GPUs enabling fast inference, and better developer tools.
@@ -55,18 +57,18 @@ This topic answered the question: *what actually makes an application "AI-powere
   - Inline chat is best for focused, specific changes to existing code
   - Sidebar chat is best for debugging, architecture questions, and understanding errors
   - Always provide context (reference specific files) and give specific instructions
-- **The Co-Pilot Trap** — the biggest risk is accepting code you can't explain. AI should accelerate your work, not replace your understanding. The golden rule: *never accept code you can't explain in your own words.*
+- **The Co-Pilot Trap** — the biggest risk is accepting code you can't explain. AI should accelerate your work, not replace your understanding. The golden rule: _never accept code you can't explain in your own words._
 
 ---
 
 ## Core Takeaways Across the Module
 
-| Theme | Lesson |
-|-------|--------|
-| AI is not magic | It's software with a probabilistic model layer on top of normal app architecture |
-| LLMs predict, not reason | They generate likely tokens — they don't verify facts or truly "understand" |
-| Hallucinations are real | Always test and verify AI-generated code and explanations |
-| Semantic > keyword | AI enables searching by meaning, not just exact text match |
-| Tools lower the barrier | APIs, LangChain, and vector DBs make AI integration accessible to any developer |
-| You still write the app | UI, backend, database, prompts, validation — all still on the developer |
-| AI is a co-pilot | Use it to accelerate work, not to avoid understanding what you're building |
+| Theme                    | Lesson                                                                           |
+| ------------------------ | -------------------------------------------------------------------------------- |
+| AI is not magic          | It's software with a probabilistic model layer on top of normal app architecture |
+| LLMs predict, not reason | They generate likely tokens — they don't verify facts or truly "understand"      |
+| Hallucinations are real  | Always test and verify AI-generated code and explanations                        |
+| Semantic > keyword       | AI enables searching by meaning, not just exact text match                       |
+| Tools lower the barrier  | APIs, LangChain, and vector DBs make AI integration accessible to any developer  |
+| You still write the app  | UI, backend, database, prompts, validation — all still on the developer          |
+| AI is a co-pilot         | Use it to accelerate work, not to avoid understanding what you're building       |
