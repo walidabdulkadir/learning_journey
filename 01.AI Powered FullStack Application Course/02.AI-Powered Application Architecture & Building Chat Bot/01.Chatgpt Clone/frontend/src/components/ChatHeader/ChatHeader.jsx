@@ -1,5 +1,5 @@
-import { ChevronDown } from 'lucide-react';
-import styles from './ChatHeader.module.css';
+import { ChevronDown } from "lucide-react";
+import styles from "./ChatHeader.module.css";
 
 export default function ChatHeader() {
   return (
@@ -9,7 +9,7 @@ export default function ChatHeader() {
         <ChevronDown size={16} />
       </div>
       <div className={styles.right}>
-        <div className={styles.avatar}>IT</div>
+        <div className={styles.avatar}>WA</div>
       </div>
     </header>
   );
