@@ -27,11 +27,11 @@ function App() {
 
   const fetchConversations = async () => {
     try {
-      const response = await axios.get(
+      const { data } = await axios.get(
         `http://localhost:5173/api/chat/conversations`,
       );
-      if (response.data.success) {
-        setConversations(response.data.data.conversations);
+      if (data.success) {
+        setConversations(data.data.conversations);
       }
     } catch (error) {
       console.error("Error fetching conversations:", error);
