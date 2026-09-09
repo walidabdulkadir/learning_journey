@@ -1,4 +1,5 @@
 import db from "../../../../db/db.config.js";
+import { systemInstruction } from "./data.js";
 
 import { GoogleGenAI } from "@google/genai";
 
@@ -36,6 +37,10 @@ const generateAssistantResponse = async (historyRows) => {
 
   const response = await ai.models.generateContent({
     model: GEMINI_MODEL,
+    config: {
+      maxOutputTokens: 1024,
+      systemInstruction: systemInstruction,
+    },
     contents,
   });
 
