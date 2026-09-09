@@ -7,8 +7,8 @@ import {
   Code2,
   FolderKanban,
   PanelLeftClose,
-} from 'lucide-react';
-import styles from './Sidebar.module.css';
+} from "lucide-react";
+import styles from "./Sidebar.module.css";
 
 export default function Sidebar() {
   return (
@@ -25,31 +25,31 @@ export default function Sidebar() {
       </div>
 
       <nav className={styles.nav}>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <MessageSquare size={18} />
           <span>New chat</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <Search size={18} />
           <span>Search chats</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <ImageIcon size={18} />
           <span>Images</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <LayoutGrid size={18} />
           <span>Apps</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <Microscope size={18} />
           <span>Deep research</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <Code2 size={18} />
           <span>Codex</span>
         </a>
-        <a href='#' className={styles.item}>
+        <a href="#" className={styles.item}>
           <FolderKanban size={18} />
           <span>Projects</span>
         </a>

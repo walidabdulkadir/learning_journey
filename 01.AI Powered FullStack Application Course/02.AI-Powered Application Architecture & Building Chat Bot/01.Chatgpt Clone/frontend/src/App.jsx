@@ -6,7 +6,7 @@ import MessageList from "./components/MessageList/MessageList";
 import ChatInput from "./components/ChatInput/ChatInput";
 import "./App.css";
 
-const API_BASE_URL = "/api";
+const API_BASE_URL = "/api/chat/conversations";
 
 function App() {
   const [conversations, setConversations] = useState([]);
@@ -49,7 +49,7 @@ function App() {
     setIsLoading(true);
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/chat/conversations`, {
+      const response = await axios.post(`${API_BASE_URL}`, {
         question,
       });
       if (response.data.success) {

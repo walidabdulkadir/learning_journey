@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import { Plus, Mic, ArrowUp } from 'lucide-react';
-import styles from './ChatInput.module.css';
+import { useState } from "react";
+import { Plus, Mic, ArrowUp } from "lucide-react";
+import styles from "./ChatInput.module.css";
 
 export default function ChatInput({ handleSendMessage, isLoading }) {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (!input.trim() || isLoading) return;
 
     handleSendMessage(input.trim());
-    setInput('');
+    setInput("");
   };
 
   return (
@@ -20,16 +20,16 @@ export default function ChatInput({ handleSendMessage, isLoading }) {
           <Plus size={20} />
         </div>
         <input
-          type='text'
+          type="text"
           className={styles.input}
-          placeholder='Ask anything'
+          placeholder="Ask anything"
           value={input}
-          onChange={e => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
           disabled={isLoading}
         />
         {input.trim() ? (
           <button
-            type='submit'
+            type="submit"
             className={styles.submitBtn}
             disabled={isLoading}
           >
