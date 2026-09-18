@@ -1,0 +1,18 @@
+{
+  "name": "semantic-operator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "1-generate-embedding.js",
+  "scripts": {
+    "dev": "node 02_MATHS-SIMILARITY.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@google/genai": "^2.22.0",
+    "dotenv": "^17.4.2",
+    "nodemon": "^3.1.14"
+  }
+}
