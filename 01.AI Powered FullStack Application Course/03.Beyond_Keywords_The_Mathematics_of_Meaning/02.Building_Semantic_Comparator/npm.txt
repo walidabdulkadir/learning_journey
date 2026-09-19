@@ -1,4 +1,0 @@
-npm init -y
-npm i dotenv
-npm i @google/genai
-npm i nodemon
