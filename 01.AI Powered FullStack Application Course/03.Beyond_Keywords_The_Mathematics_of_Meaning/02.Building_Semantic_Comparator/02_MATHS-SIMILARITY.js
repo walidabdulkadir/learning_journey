@@ -9,41 +9,6 @@ if (!GEMINI_API_KEY) {
 }
 const ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
 
-function cosineSimilarity(vecA, vecB) {
-  // 0. Check if the vectors have the same length
-  if (vecA.length !== vecB.length) {
-    throw new Error("Vectors must have the same length");
-  }
-
-  // 1. Dot Product
-  let dotProduct = 0;
-
-  for (let i = 0; i < vecA.length; i++) {
-    dotProduct += vecA[i] * vecB[i];
-  }
-
-  // 2. Magnitude
-  let magnitudeA = 0;
-  let magnitudeB = 0;
-
-  for (let i = 0; i < vecA.length; i++) {
-    magnitudeA += vecA[i] * vecA[i];
-  }
-
-  magnitudeA = Math.sqrt(magnitudeA);
-
-  for (let i = 0; i < vecB.length; i++) {
-    magnitudeB += vecB[i] * vecB[i];
-  }
-
-  magnitudeB = Math.sqrt(magnitudeB);
-
-  return dotProduct / (magnitudeA * magnitudeB);
-}
-// const vecA = [1, 2];
-// const vectB = [2, 4];
-// console.log(cosineSimilarity(vecA, vectB));
-
 // function cosineSimilarity(vecA, vecB) {
 //   // 0. Check if the vectors have the same length
 //   if (vecA.length !== vecB.length) {
@@ -53,27 +18,64 @@ function cosineSimilarity(vecA, vecB) {
 //   // 1. Dot Product
 //   let dotProduct = 0;
 
-//   // 2. Magnitude (
+//   for (let i = 0; i < vecA.length; i++) {
+//     dotProduct += vecA[i] * vecB[i];
+//   }
+
+//   // 2. Magnitude
 //   let magnitudeA = 0;
 //   let magnitudeB = 0;
 
 //   for (let i = 0; i < vecA.length; i++) {
-//     dotProduct += vecA[i] * vecB[i];
 //     magnitudeA += vecA[i] * vecA[i];
-//     magnitudeB += vecB[i] * vecB[i];
 //   }
 
 //   magnitudeA = Math.sqrt(magnitudeA);
-//   magnitudeB = Math.sqrt(magnitudeB);
 
-//   if (magnitudeA === 0 || magnitudeB === 0) {
-//     return 0;
+//   for (let i = 0; i < vecB.length; i++) {
+//     magnitudeB += vecB[i] * vecB[i];
 //   }
+
+//   magnitudeB = Math.sqrt(magnitudeB);
 
 //   return dotProduct / (magnitudeA * magnitudeB);
 // }
-// const vecA = [2, 0];
-// const vectB = [0, 4];
+// const vecA = [1, 2];
+// const vectB = [2, 4];
+// console.log(cosineSimilarity(vecA, vectB));
+
+//  A . B / ||A|| * ||B||
+
+function cosineSimilarity(vecA, vecB) {
+  // 0. Check if the vectors have the same length
+  if (vecA.length !== vecB.length) {
+    throw new Error("Vectors must have the same length");
+  }
+
+  // 1. Dot Product
+  let dotProduct = 0;
+
+  // 2. Magnitude (
+  let magnitudeA = 0;
+  let magnitudeB = 0;
+
+  for (let i = 0; i < vecA.length; i++) {
+    dotProduct += vecA[i] * vecB[i];
+    magnitudeA += vecA[i] * vecA[i];
+    magnitudeB += vecB[i] * vecB[i];
+  }
+
+  magnitudeA = Math.sqrt(magnitudeA);
+  magnitudeB = Math.sqrt(magnitudeB);
+
+  if (magnitudeA === 0 || magnitudeB === 0) {
+    return 0;
+  }
+
+  return dotProduct / (magnitudeA * magnitudeB);
+}
+// const vecA = [1, 2];
+// const vectB = [2, 4];
 // console.log(cosineSimilarity(vecA, vectB));
 
 async function compareText() {
@@ -85,7 +87,7 @@ async function compareText() {
     model: GEMINI_EMBEDDING_MODEL,
     contents: textA,
     config: {
-      taskType: "SEMANTIC_SIMILARITY",
+      taskType: "RETRIEVAL_DOCUMENT",
     },
   });
 
@@ -93,7 +95,7 @@ async function compareText() {
     model: GEMINI_EMBEDDING_MODEL,
     contents: textB,
     config: {
-      taskType: "SEMANTIC_SIMILARITY",
+      taskType: "RETRIEVAL_DOCUMENT",
     },
   });
 
@@ -101,7 +103,7 @@ async function compareText() {
     model: GEMINI_EMBEDDING_MODEL,
     contents: textC,
     config: {
-      taskType: "SEMANTIC_SIMILARITY",
+      taskType: "RETRIEVAL_DOCUMENT",
     },
   });
 
