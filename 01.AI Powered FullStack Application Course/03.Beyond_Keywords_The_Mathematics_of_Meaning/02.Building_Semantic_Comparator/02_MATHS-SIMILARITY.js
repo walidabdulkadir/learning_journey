@@ -14,14 +14,14 @@ function cosineSimilarity(vecA, vecB) {
     throw new Error("Vectors must have the same length");
   }
 
-  // 1. Dot Product (multipy matching components and sum)
+  // 1. Dot Product
   let dotProduct = 0;
 
   for (let i = 0; i < vecA.length; i++) {
     dotProduct += vecA[i] * vecB[i];
   }
 
-  // 2. Magnitude (Length of each vectors)
+  // 2. Magnitude
   let magnitudeA = 0;
   let magnitudeB = 0;
 
@@ -39,39 +39,38 @@ function cosineSimilarity(vecA, vecB) {
 
   return dotProduct / (magnitudeA * magnitudeB);
 }
+const vecA = [1, 2];
+const vectB = [2, 4];
+console.log(cosineSimilarity(vecA, vectB));
 
-console.log(cosineSimilarity([1, 9], [2, 0]));
+// function cosineSimilarity(vecA, vecB) {
+//   // 0. Check if the vectors have the same length
+//   if (vecA.length !== vecB.length) {
+//     throw new Error("Vectors must have the same length");
+//   }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//   // 1. Dot Product
+//   let dotProduct = 0;
 
-function cosineSimilarity02(vecA, vecB) {
-  // 0. Check if the vectors have the same length
-  if (vecA.length !== vecB.length) {
-    throw new Error("Vectors must have the same length");
-  }
+//   // 2. Magnitude (
+//   let magnitudeA = 0;
+//   let magnitudeB = 0;
 
-  // 1. Dot Product (multipy matching components and sum)
-  let dotProduct = 0;
+//   for (let i = 0; i < vecA.length; i++) {
+//     dotProduct += vecA[i] * vecB[i];
+//     magnitudeA += vecA[i] * vecA[i];
+//     magnitudeB += vecB[i] * vecB[i];
+//   }
 
-  // 2. Magnitude (Length of each vectors)
-  let magnitudeA = 0;
-  let magnitudeB = 0;
+//   magnitudeA = Math.sqrt(magnitudeA);
+//   magnitudeB = Math.sqrt(magnitudeB);
 
-  for (let i = 0; i < vecA.length; i++) {
-    dotProduct += vecA[i] * vecB[i];
-    magnitudeA += vecA[i] * vecA[i];
-    magnitudeB += vecB[i] * vecB[i];
-  }
+//   if (magnitudeA === 0 || magnitudeB === 0) {
+//     return 0;
+//   }
 
-  magnitudeA = Math.sqrt(magnitudeA);
-  magnitudeB = Math.sqrt(magnitudeB);
-
-  if (magnitudeA === 0 || magnitudeB === 0) {
-    return 0;
-  }
-
-  return dotProduct / (magnitudeA * magnitudeB);
-}
-
-console.log(cosineSimilarity02([5, 1], [10, 2]));
+//   return dotProduct / (magnitudeA * magnitudeB);
+// }
+// const vecA = [2, 0];
+// const vectB = [0, 4];
+// console.log(cosineSimilarity(vecA, vectB));
