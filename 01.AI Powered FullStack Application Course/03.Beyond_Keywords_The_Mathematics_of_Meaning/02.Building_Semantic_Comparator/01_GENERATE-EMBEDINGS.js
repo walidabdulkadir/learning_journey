@@ -27,4 +27,4 @@ async function generateEmbedding(text) {
     console.error("Error generating embedding", error.message);
   }
 }
-generateEmbedding("Hello");
+generateEmbedding("Hello , htd");
